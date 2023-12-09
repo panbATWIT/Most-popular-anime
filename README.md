@@ -35,7 +35,7 @@ The dataset underwent a comprehensive cleaning process to ensure data integrity,
 Key features, such as user ratings, genre, and episode count, were selected based on their relevance to anime popularity.
 
 3. Exploratory Data Analysis (EDA):
-4.  
+  
 Descriptive statistics and visualizations (histograms, scatter plots) were employed to gain insights into the distribution of user ratings, episode counts, and other relevant features.
 
 4.Clustering Analysis:
