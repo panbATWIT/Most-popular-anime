@@ -26,15 +26,15 @@ Key features, such as user ratings, genre, and episode count, were selected as t
 C. Analysis Techniques
 employed a combination of descriptive statistics, data visualization, and machine learning algorithms to analyze and rank anime series. The methodologies used include [mention specific techniques, e.g., clustering, regression].
 
-1. Data Cleaning:
+1.Data Cleaning:
 
 The dataset underwent a comprehensive cleaning process to ensure data integrity, including handling missing values, standardizing data formats, and addressing outliers.
 
-2. Feature Selection:
+2.Feature Selection:
 
 Key features, such as user ratings, genre, and episode count, were selected based on their relevance to anime popularity.
 
-3. Exploratory Data Analysis (EDA):
+3.Exploratory Data Analysis (EDA):
 
 Descriptive statistics and visualizations (histograms, scatter plots) were employed to gain insights into the distribution of user ratings, episode counts, and other relevant features.
 
