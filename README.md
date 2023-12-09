@@ -26,6 +26,37 @@ Key features, such as user ratings, genre, and episode count, were selected as t
 C. Analysis Techniques
 employed a combination of descriptive statistics, data visualization, and machine learning algorithms to analyze and rank anime series. The methodologies used include [mention specific techniques, e.g., clustering, regression].
 
+1. Data Cleaning:
+   
+The dataset underwent a comprehensive cleaning process to ensure data integrity, including handling missing values, standardizing data formats, and addressing outliers.
+
+2. Feature Selection:
+   
+Key features, such as user ratings, genre, and episode count, were selected based on their relevance to anime popularity.
+
+3. Exploratory Data Analysis (EDA):
+4.  
+Descriptive statistics and visualizations (histograms, scatter plots) were employed to gain insights into the distribution of user ratings, episode counts, and other relevant features.
+
+4.Clustering Analysis:
+
+Purpose: Identify underlying patterns or groups within the dataset that might not be apparent through simple visualizations.
+
+Algorithm: KMeans Clustering
+
+Description: KMeans is an unsupervised machine learning algorithm that partitions a dataset into a specified number of clusters (k) based on similarities among data points.
+
+Steps:
+
+Standardization: Numerical features (e.g., user ratings, episode counts) were standardized to have a mean of 0 and a standard deviation of 1 to ensure equal importance.
+
+Determination of Clusters (k): The appropriate number of clusters (k) was determined through techniques like the Elbow Method or Silhouette Score.
+
+Application of KMeans: The KMeans algorithm was applied to the standardized features, grouping anime series into clusters based on similarity.
+
+Visualization: The clusters were visualized using scatter plots, highlighting distinct groupings within the dataset.
+
+
 Tools:
 
 1.Python
