@@ -1,1 +1,63 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
 
+# Load the dataset
+anime_data = pd.read_csv('Votes_2023_03_16.csv')
+
+# Display the first few rows of the dataset
+anime_data.head()
+
+# Data Cleaning
+# Handle missing values
+anime_data.dropna(subset=['Votes', 'Score', 'Favourites_count', 'Popularity_ranking'], inplace=True)
+
+# Feature Selection
+selected_features = ['Votes', 'Score', 'Favourites_count', 'Popularity_ranking']
+anime_subset = anime_data[selected_features]
+
+# Exploratory Data Analysis (EDA)
+# Visualize distribution of numerical features
+sns.pairplot(anime_subset)
+plt.show()
+
+# Clustering Analysis
+# Standardize numerical features for clustering
+scaler = StandardScaler()
+anime_subset_scaled = scaler.fit_transform(anime_subset)
+
+# Determine the number of clusters (k) using the Elbow Method
+# [Insert code for determining k, e.g., Elbow Method]
+# Determine the number of clusters (k) using the Elbow Method
+
+inertia = []
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i, random_state=42)
+    kmeans.fit(anime_subset_scaled)
+    inertia.append(kmeans.inertia_)
+
+# Plot the Elbow Method graph
+plt.plot(range(1, 11), inertia, marker='o')
+plt.title('Elbow Method for Optimal k')
+plt.xlabel('Number of Clusters (k)')
+plt.ylabel('Inertia')
+plt.show()
+
+# Based on the Elbow Method, manually choose the optimal k (number of clusters)
+k = 3  
+
+# Apply KMeans
+kmeans = KMeans(n_clusters=k, random_state=42)
+anime_subset['cluster'] = kmeans.fit_predict(anime_subset_scaled)
+
+# Visualize clusters
+sns.pairplot(anime_subset, hue='cluster', palette='viridis')
+plt.show()
+
+
+# Results
+# Display the top 10 most popular anime based on user ratings
+top_10_anime = anime_data.sort_values(by='Score', ascending=False).head(10)
+top_10_anime[['English_Name', 'Score', 'Votes', 'Favourites_count', 'Popularity_ranking']]
